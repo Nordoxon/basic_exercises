@@ -2,7 +2,11 @@
 # Необходимо вывести имена всех учеников из списка с новой строки
 
 names = ['Оля', 'Петя', 'Вася', 'Маша']
-# ???
+def names_form1():
+    for name in names:
+        print(name)
+names_form1()
+print() #пустая строка для разделения
 
 
 # Задание 2
@@ -12,8 +16,12 @@ names = ['Оля', 'Петя', 'Вася', 'Маша']
 # Петя: 4
 
 names = ['Оля', 'Петя', 'Вася', 'Маша']
-# ???
-
+def names_form2():
+    for name in names:
+        sum_symbol = len(name)
+        print(f"{name}: {sum_symbol}")
+names_form2()
+print() #пустая строка для разделения
 
 # Задание 3
 # Необходимо вывести имена всех учеников из списка, рядом с именем вывести пол ученика
@@ -25,8 +33,15 @@ is_male = {
     'Маша': False,
 }
 names = ['Оля', 'Петя', 'Вася', 'Маша']
-# ???
 
+def names_form3():
+    for name in names:
+        if is_male.get(name) == True:
+            print(f"{name}: мужской")
+        else:
+            print(f"{name}: женский")
+names_form3()
+print() #пустая строка для разделения
 
 # Задание 4
 # Даны группу учеников. Нужно вывести количество групп и для каждой группы – количество учеников в ней
@@ -40,8 +55,14 @@ groups = [
     ['Вася', 'Маша', 'Саша', 'Женя'],
     ['Оля', 'Петя', 'Гриша'],
 ]
-# ???
-
+def group_challenge():
+    number_group = 0
+    print(f"Всего {len(groups)} группы.")
+    for group in groups:
+        number_group +=1
+        print(f"Группа {number_group}: {len(group)} ученика.")
+group_challenge()
+print() #пустая строка для разделения
 
 # Задание 5
 # Для каждой пары учеников нужно с новой строки перечислить учеников, которые в неё входят
@@ -54,4 +75,9 @@ groups = [
     ['Оля', 'Петя', 'Гриша'],
     ['Вася', 'Маша', 'Саша', 'Женя'],
 ]
-# ???
+def group_composition():
+    number_group = 0
+    for group in groups:
+        number_group +=1
+        print(f"Группа {number_group}: {', '.join(group)}")
+group_composition()
