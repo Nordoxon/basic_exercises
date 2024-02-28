@@ -2,10 +2,8 @@
 # Необходимо вывести имена всех учеников из списка с новой строки
 
 names = ['Оля', 'Петя', 'Вася', 'Маша']
-def names_form1():
-    for name in names:
-        print(name)
-names_form1()
+for name in names:
+    print(name)
 print() #пустая строка для разделения
 
 
@@ -16,11 +14,9 @@ print() #пустая строка для разделения
 # Петя: 4
 
 names = ['Оля', 'Петя', 'Вася', 'Маша']
-def names_form2():
-    for name in names:
-        sum_symbol = len(name)
-        print(f"{name}: {sum_symbol}")
-names_form2()
+for name in names:
+    letters_count = len(name)
+    print(f"{name}: {letters_count}")
 print() #пустая строка для разделения
 
 # Задание 3
@@ -34,13 +30,13 @@ is_male = {
 }
 names = ['Оля', 'Петя', 'Вася', 'Маша']
 
-def names_form3():
-    for name in names:
-        if is_male.get(name) == True:
-            print(f"{name}: мужской")
-        else:
-            print(f"{name}: женский")
-names_form3()
+for name in names:
+    if is_male.get(name) == True:
+        gender = 'мужской'
+        print(f"{name}: {gender}")
+    else:
+        gender = 'женский'
+        print(f"{name}: {gender}")
 print() #пустая строка для разделения
 
 # Задание 4
@@ -56,11 +52,10 @@ groups = [
     ['Оля', 'Петя', 'Гриша'],
 ]
 def group_challenge():
-    number_group = 0
+    group_number = 0
     print(f"Всего {len(groups)} группы.")
-    for group in groups:
-        number_group +=1
-        print(f"Группа {number_group}: {len(group)} ученика.")
+    for group_number, group in enumerate (groups, 1):
+        print(f"Группа {group_number}: {len(group)} ученика.")
 group_challenge()
 print() #пустая строка для разделения
 
@@ -75,9 +70,6 @@ groups = [
     ['Оля', 'Петя', 'Гриша'],
     ['Вася', 'Маша', 'Саша', 'Женя'],
 ]
-def group_composition():
-    number_group = 0
-    for group in groups:
-        number_group +=1
-        print(f"Группа {number_group}: {', '.join(group)}")
-group_composition()
+group_number = 0
+for group_number, group in enumerate (groups, 1):
+    print(f"Группа {group_number}: {', '.join(group)}")
